@@ -86,26 +86,25 @@
                             <% } %>
 
             </div>
-            <h2>Skins</h2>
-            <div class="skins row aling-items-center container-fluid">
+        <div class="container-fluid">
+            <div class="skins">
+                <h2>Skins</h2>
+                <div class="row aling-items-center">
+                    <% if (arrayCampeones.length> 0) { %>
+                        <!--Haremos el foreach para recorrer el array-->
+                        <% arraySkins.forEach(skin=> { %>
 
-
-                <% if (arraySkins.length> 0) { %>
-                    <!--Haremos el foreach para recorrer el array-->
-                    <% arraySkins.forEach(skin=> { %>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-3 col-sm-12">
-
+                            <div class="col-2">
                                 <img src="<%=skin.Img%>" height="100vh">
                             </div>
-                            <div class="col-lg-8 col-md-3 col-sm-12">
+                            <div class="col-2">
                                 <a href="skins/<%= skin.id %>/<%= skin.Nombre %>">
                                     <%= skin.Nombre %>
                                 </a>
                             </div>
-                        </div>
-                        <% }) %>
-                            <% } %>
+
+                            <% }) %>
+                                <% } %>
+                </div>
             </div>
-        </div>
         <%- include("templates/footer.ejs") %>
